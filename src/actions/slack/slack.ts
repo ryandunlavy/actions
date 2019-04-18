@@ -104,7 +104,7 @@ https://github.com/looker/actions/blob/master/src/actions/slack/README.md`,
     const options: any = {
       exclude_archived: true,
       exclude_members: true,
-      limit: 200,
+      limit: 1,
     }
     async function pageLoaded(accumulatedChannels: any[], response: any): Promise<any[]> {
       const mergedChannels = accumulatedChannels.concat(response.channels)
@@ -128,7 +128,7 @@ https://github.com/looker/actions/blob/master/src/actions/slack/README.md`,
   async usableDMs(request: Hub.ActionRequest) {
     const slack = this.slackClientFromRequest(request)
     const options: any = {
-      limit: 200,
+      limit: 1,
     }
     async function pageLoaded(accumulatedUsers: any[], response: any): Promise<any[]> {
       const mergedUsers = accumulatedUsers.concat(response.members)
