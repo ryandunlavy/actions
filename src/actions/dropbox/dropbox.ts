@@ -13,7 +13,7 @@ export class DropboxAction extends Hub.OAuthAction {
     description = "Send data directly to a Dropbox folder."
     supportedActionTypes = [Hub.ActionType.Query, Hub.ActionType.Dashboard]
     usesStreaming = false
-    minimumSupportedLookerVersion = "6.8.0"
+    //minimumSupportedLookerVersion = "6.8.0"
     requiredFields = []
     params = []
 
