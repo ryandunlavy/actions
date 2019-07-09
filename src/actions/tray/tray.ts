@@ -1,6 +1,8 @@
 import * as Hub from "../../hub"
 
-export class TrayAction extends Hub.Action {
+import {WebhookAction} from "../webhook/webhook"
+
+export class TrayAction extends WebhookAction {
 
   name = "tray"
   label = "Tray"
@@ -17,8 +19,15 @@ export class TrayAction extends Hub.Action {
     return new Hub.ActionResponse({success: true})
   }
 
+
   async form() {
     const form = new Hub.ActionForm()
+    form.fields = [{
+      label: "Tray Webhook URL",
+      name: "url",
+      required: true,
+      type: "string",
+    }]
     return form
   }
 }
