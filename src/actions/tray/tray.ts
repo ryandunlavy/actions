@@ -19,12 +19,6 @@ export class TrayAction extends Hub.Action {
 
   async form() {
     const form = new Hub.ActionForm()
-    form.fields = [{
-      label: "Tray Webhook URL",
-      name: "url",
-      required: true,
-      type: "string",
-    }]
     return form
   }
 }
