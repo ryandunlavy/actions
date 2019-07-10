@@ -15,6 +15,18 @@ export class TesterAction extends Hub.Action {
 
   async execute(request: Hub.ActionRequest) {
     console.log(request)
+    try {
+      // let columns = errors.map((e) => e.message ? e.message : e).join(", ")
+      await request.streamJsonDetail({
+        onFields: (fields) => {
+          console.log(fields)
+        },
+        onRow: (row) => {
+          console.log(row)
+        },
+      })
+    } catch (e) {
+    }
     return new Hub.ActionResponse({ success: true })
   }
 
