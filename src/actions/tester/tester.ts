@@ -14,12 +14,11 @@ export class TesterAction extends Hub.Action {
   supportedFormats = [Hub.ActionFormat.JsonDetail]
 
   async execute(request: Hub.ActionRequest) {
-    const fields = ""
+    console.log(request)
     try {
-      // let columns = errors.map((e) => e.message ? e.message : e).join(", ")
       await request.streamJsonDetail({
         onRow: (row) => {
-          row[1]
+          console.log(row)
         },
       })
     } catch (e) {
