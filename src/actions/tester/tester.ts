@@ -9,12 +9,19 @@ export class TesterAction extends Hub.Action {
   params = []
   supportedActionTypes = [Hub.ActionType.Query]
   usesStreaming = true
-  //supportedFormattings = [Hub.ActionFormatting.Unformatted]
-  supportedVisualizationFormattings = [Hub.ActionVisualizationFormatting.Noapply]
+  supportedFormattings = [Hub.ActionFormatting.Unformatted]
+  //supportedVisualizationFormattings = [Hub.ActionVisualizationFormatting.Noapply]
   supportedFormats = [Hub.ActionFormat.JsonDetail]
 
   async execute(request: Hub.ActionRequest) {
     console.log(request)
+    if (request.scheduledPlan &&
+    request.scheduledPlan.query &&
+    request.scheduledPlan.query.fields) {
+      console.dir(request.scheduledPlan.query.fields)
+    }
+
+
     try {
       await request.streamJsonDetail({
         onRow: (row) => {
