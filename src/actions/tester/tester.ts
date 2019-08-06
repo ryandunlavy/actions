@@ -15,22 +15,22 @@ export class TesterAction extends Hub.Action {
 
   async execute(request: Hub.ActionRequest) {
     console.log(request)
-    if (request.scheduledPlan &&
-    request.scheduledPlan.query &&
-    request.scheduledPlan.query.fields) {
-      console.dir(request.scheduledPlan.query.fields)
-    }
+    // if (request.scheduledPlan &&
+    // request.scheduledPlan.query &&
+    // request.scheduledPlan.query.fields) {
+    //   console.dir(request.scheduledPlan.query.fields)
+    // }
 
 
-    try {
-      await request.streamJsonDetail({
-        onRow: (row) => {
-          console.log(row)
-        },
-      })
-    } catch (e) {
+    // try {
+    //   await request.streamJsonDetail({
+    //     onRow: (row) => {
+    //       console.log(row)
+    //     },
+    //   })
+    // } catch (e) {
 
-    }
+    //}
     return new Hub.ActionResponse({ success: true })
   }
 
