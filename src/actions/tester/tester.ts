@@ -11,7 +11,7 @@ export class TesterAction extends Hub.Action {
   usesStreaming = true
   supportedFormattings = [Hub.ActionFormatting.Unformatted]
   //supportedVisualizationFormattings = [Hub.ActionVisualizationFormatting.Noapply]
-  supportedFormats = [Hub.ActionFormat.JsonDetail]
+  //supportedFormats = [Hub.ActionFormat.JsonDetail]
 
   async execute(request: Hub.ActionRequest) {
     console.log(request)
