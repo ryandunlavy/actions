@@ -7,7 +7,7 @@ export class TesterAction extends Hub.Action {
   name = "tester"
   label = "Tester"
   params = []
-  supportedActionTypes = [Hub.ActionType.Query]
+  supportedActionTypes = [Hub.ActionType.Query, Hub.ActionType.Dashboard]
   usesStreaming = true
   //supportedFormattings = [Hub.ActionFormatting.Unformatted]
   //supportedVisualizationFormattings = [Hub.ActionVisualizationFormatting.Noapply]
